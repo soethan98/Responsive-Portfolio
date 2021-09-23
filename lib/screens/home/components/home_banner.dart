@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio_website/responsive.dart';
 
@@ -7,34 +8,84 @@ class HomeBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: Responsive.isMobile(context) ? 2.5 : 3,
-      child: Stack(
-        fit: StackFit.expand,
+      aspectRatio: Responsive.isMobile(context) || Responsive.isMobileLarge(context) ? 4/3  : 3 ,
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
         children: [
-          Image.asset(
-            "assets/images/programmer.gif",
-            alignment: Alignment.centerRight,
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                "Discover my Amazing \nArt Space!",
-                style: Responsive.isDesktop(context)
-                    ? Theme.of(context).textTheme.headline3?.copyWith(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        )
-                    : Theme.of(context).textTheme.headline5?.copyWith(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
-              ),
-            ],
-          )
+          Expanded(
+              flex: 2,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 16,right: 8),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Hi!👋 \nI'm Soe Than",
+                      style: Theme.of(context).textTheme.headline5?.copyWith(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
+                    ),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    MyBuildAnimatedText(),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    Text(
+                      "Dedicated and performance-driven mobile developer who loves to clean and maintainable code.",
+                      style: Theme.of(context).textTheme.subtitle1?.copyWith(
+                            color: Colors.white,
+                          ),
+                    ),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    ElevatedButton(
+                        onPressed: () {}, child: const Text('Hire me'))
+                  ],
+                ),
+              )),
+          Expanded(flex: 1, child: Image.asset('assets/images/programmer.png'))
         ],
       ),
+    );
+  }
+}
+
+class MyBuildAnimatedText extends StatelessWidget {
+  const MyBuildAnimatedText({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return DefaultTextStyle(
+      style: Theme.of(context).textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
+      child: Row(
+        children: [const Text("I build "), AnimatedText()],
+      ),
+    );
+  }
+}
+
+class AnimatedText extends StatelessWidget {
+  const AnimatedText({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedTextKit(
+      animatedTexts: [
+        TyperAnimatedText(
+          'Native Android Apps',
+          speed: Duration(milliseconds: 60),
+        ),
+        TyperAnimatedText(
+          'Flutter Apps',
+          speed: Duration(milliseconds: 60),
+        )
+      ],
     );
   }
 }

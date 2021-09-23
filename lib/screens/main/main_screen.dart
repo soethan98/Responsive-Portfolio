@@ -13,6 +13,7 @@ class MainScreen extends StatelessWidget {
       appBar: Responsive.isDesktop(context)
           ? null
           : AppBar(
+            elevation: 0,
               backgroundColor: bgColor,
               leading: Builder(
                   builder: (context) => IconButton(
@@ -20,34 +21,31 @@ class MainScreen extends StatelessWidget {
                       icon: const Icon(Icons.menu))),
             ),
       drawer: SideDrawer(),
-      body: Center(
-        child: Container(
-          constraints: const BoxConstraints(maxWidth: maxWidth),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              if (Responsive.isDesktop(context))
-                Expanded(
-                    flex: 2,
-                    child: Container(
-                      color: Colors.red,
-                    )),
+      body: Container(
+        constraints: const BoxConstraints(maxWidth: maxWidth),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            if (Responsive.isDesktop(context)) ...[
+              Expanded(
+                  flex: 2,
+                  child: Container(
+                    color: Colors.red,
+                  )),
               const SizedBox(
                 width: defaultPadding,
               ),
-              Expanded(
-                flex: 7,
-                child: SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      ...children
-                    ],
-                  ),
-                ),
-              )
             ],
-          ),
+            Expanded(
+              flex: 7,
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [...children],
+                ),
+              ),
+            )
+          ],
         ),
       ),
     );
