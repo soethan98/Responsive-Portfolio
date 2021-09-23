@@ -1,6 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio_website/responsive.dart';
+import '../../../extensions/extension.dart';
 
 class HomeBanner extends StatelessWidget {
   const HomeBanner({Key? key}) : super(key: key);
@@ -45,7 +46,8 @@ class HomeBanner extends StatelessWidget {
                       height: 8,
                     ),
                     ElevatedButton(
-                        onPressed: () {}, child: const Text('Hire me'))
+                      style: ButtonStyle(elevation: MaterialStateProperty.all(12),),
+                        onPressed: () {}, child: const Text('Hire me')).moveUpHover
                   ],
                 ),
               )),
