@@ -13,7 +13,7 @@ class ProjectCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
+      padding: const EdgeInsets.all(defaultPadding),
       color: secondaryColor,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -21,49 +21,31 @@ class ProjectCard extends StatelessWidget {
         children: [
           Text(
             projectEntity.title,
-            maxLines: 1,
+            maxLines: 2,
             overflow: TextOverflow.ellipsis,
             style: Theme.of(context).textTheme.subtitle2,
           ),
-          const SizedBox(
-            height: 10,
-          ),
+          const Spacer(),
           Text(
             projectEntity.description!,
             maxLines: Responsive.isMobileLarge(context) ? 3 : 4,
             overflow: TextOverflow.ellipsis,
             style: TextStyle(height: 1.5),
           ),
-          const SizedBox(
-            height: 8,
-          ),
+          const Spacer(),
           Chip(label: Text(projectEntity.baseLang)),
-          const SizedBox(
-            height: 8,
-          ),
-           SizedBox(
-            height: 48,
-            child: Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Expanded(
-                  child: TextButton(
-                      onPressed: () {},
-                      child: SvgPicture.asset("assets/icons/github.svg")),
-                ),
-                Expanded(
-                  child: TextButton(
-                      onPressed: () {},
-                      child: SvgPicture.asset("assets/icons/github.svg")),
-                )
-          
-        
-              ],
-            ),
-          ),const SizedBox(
-            height: 8,
-          ),
+          const Spacer(),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TextButton(
+                  onPressed: () {},
+                  child: SvgPicture.asset("assets/icons/github.svg")),
+              TextButton(
+                  onPressed: () {},
+                  child: SvgPicture.asset("assets/icons/github.svg")),
+            ],
+          )
         ],
       ),
     );
