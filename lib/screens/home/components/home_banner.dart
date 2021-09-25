@@ -9,7 +9,10 @@ class HomeBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: Responsive.isMobile(context) || Responsive.isMobileLarge(context) ? 4/3  : 3 ,
+      aspectRatio:
+          Responsive.isMobile(context) || Responsive.isMobileLarge(context)
+              ? 4 / 3
+              : 3,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisSize: MainAxisSize.min,
@@ -17,7 +20,7 @@ class HomeBanner extends StatelessWidget {
           Expanded(
               flex: 2,
               child: Padding(
-                padding: const EdgeInsets.only(left: 16,right: 8),
+                padding: const EdgeInsets.only(left: 16, right: 8),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -46,8 +49,11 @@ class HomeBanner extends StatelessWidget {
                       height: 8,
                     ),
                     ElevatedButton(
-                      style: ButtonStyle(elevation: MaterialStateProperty.all(12),),
-                        onPressed: () {}, child: const Text('Hire me')).moveUpHover
+                        style: ButtonStyle(
+                          elevation: MaterialStateProperty.all(12),
+                        ),
+                        onPressed: () {},
+                        child: const Text('Hire me'))
                   ],
                 ),
               )),
@@ -64,7 +70,10 @@ class MyBuildAnimatedText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTextStyle(
-      style: Theme.of(context).textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
+      style: Theme.of(context)
+          .textTheme
+          .subtitle1!
+          .copyWith(fontWeight: FontWeight.bold),
       child: Row(
         children: [const Text("I build "), AnimatedText()],
       ),

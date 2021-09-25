@@ -41,6 +41,7 @@ class MainScreen extends StatelessWidget {
               flex: 7,
               child: SingleChildScrollView(
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [...children],
                 ),
               ),
