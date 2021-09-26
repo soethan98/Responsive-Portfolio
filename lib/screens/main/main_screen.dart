@@ -21,30 +21,30 @@ class MainScreen extends StatelessWidget {
                       icon: const Icon(Icons.menu))),
             ),
       drawer: SideDrawer(),
-      body: Container(
-        constraints: const BoxConstraints(maxWidth: maxWidth),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            if (Responsive.isDesktop(context)) ...[
+      body: Center(
+        child: Container(
+          constraints: const BoxConstraints(maxWidth: maxWidth),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              if (Responsive.isDesktop(context)) ...[
+                Expanded(
+                    flex: 2,
+                    child: SideDrawer()),
+            
+              ],
               Expanded(
-                  flex: 2,
-                  child: SideDrawer()),
-              // const SizedBox(
-              //   width: defaultPadding,
-              // ),
-            ],
-            Expanded(
-              flex: 7,
-              child: SingleChildScrollView(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [...children],
+                flex: 7,
+                child: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [...children],
+                  ),
                 ),
-              ),
-            )
-          ],
+              )
+            ],
+          ),
         ),
       ),
     );

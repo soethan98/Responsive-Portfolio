@@ -2,6 +2,7 @@ import 'package:dev_icons/dev_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio_website/constants.dart';
 import 'package:portfolio_website/models/skills.dart';
+import 'package:portfolio_website/responsive.dart';
 
 class Skills extends StatelessWidget {
   const Skills({Key? key}) : super(key: key);
@@ -21,9 +22,14 @@ class Skills extends StatelessWidget {
         ),
         Wrap(
           direction: Axis.horizontal,
-          spacing: 5,
-          children: skills.entries.map((e) => SkillChip(label: e.key,icon: e.value,)).toList(),
-         
+          spacing: 10,
+          runSpacing: Responsive.isMobile(context) ? 0.0 : 20,
+          children: skills.entries
+              .map((e) => SkillChip(
+                    label: e.key,
+                    icon: e.value,
+                  ))
+              .toList(),
         )
       ],
     );
@@ -39,7 +45,7 @@ class SkillChip extends StatelessWidget {
   Widget build(BuildContext context) {
     return Chip(
       label: Text(label),
-      avatar: icon!=null ? Icon(icon) : null,
+      avatar: icon != null ? Icon(icon) : null,
     );
   }
 }
