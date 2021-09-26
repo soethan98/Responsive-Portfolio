@@ -30,12 +30,10 @@ class MainScreen extends StatelessWidget {
             if (Responsive.isDesktop(context)) ...[
               Expanded(
                   flex: 2,
-                  child: Container(
-                    color: Colors.red,
-                  )),
-              const SizedBox(
-                width: defaultPadding,
-              ),
+                  child: SideDrawer()),
+              // const SizedBox(
+              //   width: defaultPadding,
+              // ),
             ],
             Expanded(
               flex: 7,
