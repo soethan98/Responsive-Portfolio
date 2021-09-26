@@ -1,3 +1,4 @@
+import 'package:dev_icons/dev_icons.dart';
 import 'package:flutter/material.dart';
 
 class MyInfo extends StatelessWidget {
@@ -16,7 +17,7 @@ class MyInfo extends StatelessWidget {
             const Spacer(flex: 2),
             const CircleAvatar(
               radius: 50,
-              backgroundImage: AssetImage("assets/images/IMG_7344.jpg"),
+              backgroundImage: AssetImage("assets/images/my_dp.jpg"),
             ),
             const Spacer(),
             Text(
