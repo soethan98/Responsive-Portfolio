@@ -52,7 +52,14 @@ class HomeBanner extends StatelessWidget {
                         style: ButtonStyle(
                           elevation: MaterialStateProperty.all(12),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                           Uri(
+                            scheme: 'mailto',
+                            path: 'soethan762@gmail.com',
+                          ).toString().launchURL();
+
+                          // launch(emailLaunchUri.toString());
+                        },
                         child: const Text('Hire me'))
                   ],
                 ),

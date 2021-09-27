@@ -5,16 +5,18 @@ import 'package:portfolio_website/constants.dart';
 import 'package:portfolio_website/screens/main/components/area_info_text.dart';
 import 'package:portfolio_website/screens/main/components/my_info.dart';
 import 'package:portfolio_website/screens/main/components/skills.dart';
-import 'package:url_launcher/url_launcher.dart';
+import '../../../extensions/extension.dart';
 
 class SideDrawer extends StatelessWidget {
+  const SideDrawer({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
       child: SafeArea(
           child: Column(
         children: [
-          MyInfo(),
+          const MyInfo(),
           Expanded(
               child: SingleChildScrollView(
             padding: const EdgeInsets.all(defaultPadding),
@@ -34,21 +36,25 @@ class SideDrawer extends StatelessWidget {
                 ),
                 const Skills(),
                 Container(
-                  margin: EdgeInsets.only(top: defaultPadding),
-                  color: Color(0xFF24242E),
+                  margin: const EdgeInsets.only(top: defaultPadding),
+                  color: const Color(0xFF24242E),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       IconButton(
-                        onPressed: () => _launchURL('https://www.linkedin.com/in/soe-than-b79213134/'),
+                        onPressed: () =>
+                            'https://www.linkedin.com/in/soe-than-b79213134/'
+                                .launchURL(),
                         icon: const Icon(DevIcons.linkedinPlain),
                       ),
                       IconButton(
-                        onPressed: () => _launchURL('https://twitter.com/SoeThan48790364'),
+                        onPressed: () =>
+                            'https://twitter.com/SoeThan48790364'.launchURL(),
                         icon: const Icon(DevIcons.twitterOriginal),
                       ),
                       IconButton(
-                        onPressed: () => _launchURL('https://github.com/soethan98'),
+                        onPressed: () =>
+                            'https://github.com/soethan98'.launchURL(),
                         icon: const Icon(DevIcons.githubOriginal),
                       ),
                     ],
@@ -61,8 +67,4 @@ class SideDrawer extends StatelessWidget {
       )),
     );
   }
-
-  void _launchURL(String _url) async =>
-    await canLaunch(_url) ? await launch(_url) : throw 'Could not launch $_url';
-
 }

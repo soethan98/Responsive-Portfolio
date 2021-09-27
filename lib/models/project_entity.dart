@@ -16,39 +16,63 @@ class ProjectEntity {
 
 List<ProjectEntity> projects = [
   ProjectEntity(
-    title: "Responsive Admin Panel or Dashboard - Flutter UI",
-    baseLang: 'Flutter',
+      title: "Movie Talkies",
+      baseLang: 'Kotlin',
+      description: "Explore jetpack architecture components,dagger-2, rxjava",
+      playstoreUrl:
+          'https://play.google.com/store/apps/details?id=com.soethan.movietalkies',
+      githubUrl: 'https://github.com/soethan98/MovieTalkies'),
+  ProjectEntity(
+      title: "MMCurrencyExchange",
+      baseLang: 'Kotlin',
+      description:
+          "Display exchange rate fetched from https://forex.cbm.gov.mm/api/",
+      githubUrl: 'https://github.com/soethan98/MMCurrencyExchange',
+      playstoreUrl:
+          'https://play.google.com/store/apps/details?id=com.soethan.mmcurrencyexchange'),
+  ProjectEntity(
+    title: "Al-Salat",
+    baseLang: 'Java',
+    playstoreUrl:
+        'https://play.google.com/store/apps/details?id=org.m2cs.al_salat',
     description:
-        "On Flutter V2.* web officially supported on a stable branch. Today I share an Admin panel or you can call it dashboard UI build with flutter. Now you can build your app dashboard using flutter. This dashboard contains almost everything that you need like a chart, table, nice small card for showing info.",
+        "This App include Prayer Time, Qibla Direction, 40 Rabbana, Tasbih and info of Namaz. This application is developed by M2CS(Myanmar Muslim Computer Students).",
   ),
   ProjectEntity(
-    title: "E-Commerce Complate App - Flutter UI",
-    baseLang: 'Flutter',
+    title: "FinQ",
+    baseLang: 'Kotlin',
+    playstoreUrl: 'https://play.google.com/store/apps/details?id=co.finiq',
     description:
-        "In the first part of our complete e-commerce app, we show you how you can create a nice clean onboarding screen for your e-commerce app that can run both Andriod and iOS devices because it builds with flutter. Then on the second episode, we build a Sign in, Forgot Password screen with a custom error indicator.",
+        """FinQ is a finance tracker app that allows you to save your income, expense in daily life.
+We also aim to give you finance knowledge with lots of articles in our app. We also include an interest calculator that can make you ease in calculation. Our app also includes Myanmar language to help people better understanding of app flows. You can view your income, expense within date range and edit, delete your history. Also Store in records in the cloud within a few steps and download when you needed.""",
   ),
   ProjectEntity(
-    title: "Outlook Email App Redesign - Flutter Fully Responsive Design UI",
-    baseLang: 'Flutter',
-    description:
-        "We redesign the outlook app also make it responsive so that you can run it everywhere on your phone, tab, or web. In this flutter responsive video, we will show you the real power of flutter. Make mobile, web, and desktop app from a single codebase.",
-  ),
+      title: "MM Islamic Book",
+      baseLang: 'Kotlin',
+      playstoreUrl:
+          'https://play.google.com/store/apps/details?id=org.m2cs.mmislamicbooks',
+      description:
+          "A good place to download Islamic books with Myanmar Language"),
   ProjectEntity(
-    title: "Chat/Messaging App Light and Dark Theme - Flutter UI",
-    baseLang: 'Flutter',
-    description:
-        "Today we gonna build messing/chat app #ui using #flutter that runs both Android and iOS devices also has a dark and light theme. We create in total 4 screens all of that support both Dark Theme and Light Theme. At first, we design a welcome screen that contains an image with a tag line also has a skip button.",
-  ),
+      title: "Daily ToDo",
+      baseLang: 'Flutter',
+      playstoreUrl:
+          'https://play.google.com/store/apps/details?id=soethan.flutter_todo',
+      description:
+          """Daily ToDo offers you to note down your daily tasks and remind with notification on time.
+You can add notes easily."""),
   ProjectEntity(
-    title: "Welcome page, Login Page and Sign up page - Flutter UI",
-    baseLang: 'Flutter',
-    description:
-        "In the first part of our complete e-commerce app, we show you how you can create a nice clean onboarding screen for your e-commerce app that can run both Andriod and iOS devices because it builds with flutter. Then on the second episode, we build a Sign in, Forgot Password screen with a custom error indicator.",
-  ),
+      title: 'Masnoon Dua',
+      baseLang: 'Flutter',
+      playstoreUrl:
+          'https://play.google.com/store/apps/details?id=m2cs.masnoondua',
+      description:
+          """This is a Islamic dua application which are Masnoon duas(the duas which you must used in daily lives). The meaning are translated Myanmar Language . Arabic Text and Myanmar meaning are tested by "Al Haj Maulana Saeedullah Mahmudi".The app allow you to read this duas by categories with offline audio playback very easily.In which you can save your favorite duas. The original sources of this app are from true Hadiths and books translated in Myanmar Language. This application is developed by M2CS(Myanmar Muslim Computer Students) Organization."""),
+
   ProjectEntity(
-    title: "Covid-19 App - Flutter UI",
+    title: 'Deen Talk Myanmar',
     baseLang: 'Flutter',
-    description:
-        "We redesign the outlook app also make it responsive so that you can run it everywhere on your phone, tab, or web. In this flutter responsive video, we will show you the real power of flutter. Make mobile, web, and desktop app from a single codebase.",
+    playstoreUrl:
+        'https://play.google.com/store/apps/details?id=org.deen_talk_myanmar',
   ),
 ];

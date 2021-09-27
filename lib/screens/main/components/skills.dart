@@ -1,4 +1,3 @@
-import 'package:dev_icons/dev_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio_website/constants.dart';
 import 'package:portfolio_website/models/skills.dart';
@@ -44,8 +43,8 @@ class SkillChip extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Chip(
-      label: Text(label),
-      avatar: icon != null ? Icon(icon) : null,
-    );
+        label: Text(label),
+        avatar: icon != null ? Icon(icon) : null,
+      );
   }
 }

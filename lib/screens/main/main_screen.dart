@@ -31,7 +31,8 @@ class MainScreen extends StatelessWidget {
               if (Responsive.isDesktop(context)) ...[
                 Expanded(
                     flex: 2,
-                    child: SideDrawer()),
+                    child: SideDrawer()
+                    ),
             
               ],
               Expanded(
