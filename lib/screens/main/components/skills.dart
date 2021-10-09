@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_website/constants.dart';
+import 'package:portfolio_website/utils/constants.dart';
 import 'package:portfolio_website/models/skills.dart';
-import 'package:portfolio_website/responsive.dart';
+import 'package:portfolio_website/utils/responsive.dart';
 
 class Skills extends StatelessWidget {
   const Skills({Key? key}) : super(key: key);
@@ -43,8 +43,10 @@ class SkillChip extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Chip(
-        label: Text(label),
-        avatar: icon != null ? Icon(icon) : null,
-      );
+      label: Text(label),
+      avatar: icon != null
+          ? Icon(icon)
+          : null,
+    );
   }
 }

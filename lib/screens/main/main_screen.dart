@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_website/constants.dart';
-import 'package:portfolio_website/responsive.dart';
+import 'package:portfolio_website/utils/constants.dart';
+import 'package:portfolio_website/utils/responsive.dart';
 import 'package:portfolio_website/screens/main/components/side_drawer.dart';
 
 class MainScreen extends StatelessWidget {
@@ -13,8 +13,7 @@ class MainScreen extends StatelessWidget {
       appBar: Responsive.isDesktop(context)
           ? null
           : AppBar(
-            elevation: 0,
-              backgroundColor: bgColor,
+              elevation: 0,
               leading: Builder(
                   builder: (context) => IconButton(
                       onPressed: () => Scaffold.of(context).openDrawer(),
@@ -29,18 +28,19 @@ class MainScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               if (Responsive.isDesktop(context)) ...[
-                Expanded(
-                    flex: 2,
-                    child: SideDrawer()
-                    ),
-            
+                Expanded(flex: 2, child: SideDrawer()),
               ],
               Expanded(
                 flex: 7,
-                child: SingleChildScrollView(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [...children],
+                child: ScrollConfiguration(
+                  behavior: ScrollConfiguration.of(context)
+                      .copyWith(scrollbars: false),
+                  child: SingleChildScrollView(
+                    controller: ScrollController(),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [...children],
+                    ),
                   ),
                 ),
               )

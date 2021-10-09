@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../constants.dart';
+import '../../../utils/constants.dart';
 
 class AreaInfoText extends StatelessWidget {
   const AreaInfoText({
@@ -20,7 +20,6 @@ class AreaInfoText extends StatelessWidget {
         children: [
           Text(
             title!,
-            style: TextStyle(color: Colors.white),
           ),
           Text(text!),
         ],

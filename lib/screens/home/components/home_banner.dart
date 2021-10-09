@@ -1,6 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolio_website/responsive.dart';
+import 'package:portfolio_website/utils/responsive.dart';
 import '../../../extensions/extension.dart';
 
 class HomeBanner extends StatelessWidget {
@@ -29,7 +29,6 @@ class HomeBanner extends StatelessWidget {
                       "Hi!👋 \nI'm Soe Than",
                       style: Theme.of(context).textTheme.headline5?.copyWith(
                             fontWeight: FontWeight.bold,
-                            color: Colors.white,
                           ),
                     ),
                     const SizedBox(
@@ -41,19 +40,22 @@ class HomeBanner extends StatelessWidget {
                     ),
                     Text(
                       "Dedicated and performance-driven mobile developer who loves to clean and maintainable code.",
-                      style: Theme.of(context).textTheme.subtitle1?.copyWith(
-                            color: Colors.white,
-                          ),
+                      style: Theme.of(context).textTheme.subtitle1?.copyWith(),
                     ),
                     const SizedBox(
                       height: 8,
                     ),
                     ElevatedButton(
-                        style: ButtonStyle(
-                          elevation: MaterialStateProperty.all(12),
-                        ),
+                        style: Theme.of(context)
+                            .elevatedButtonTheme
+                            .style
+                            ?.copyWith(
+                                elevation: MaterialStateProperty.all(12)),
+                        // style: ButtonStyle(
+                        //   elevation: MaterialStateProperty.all(12),
+                        // ),
                         onPressed: () {
-                           Uri(
+                          Uri(
                             scheme: 'mailto',
                             path: 'soethan762@gmail.com',
                           ).toString().launchURL();

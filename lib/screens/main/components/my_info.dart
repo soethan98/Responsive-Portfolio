@@ -1,5 +1,7 @@
-import 'package:dev_icons/dev_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:portfolio_website/providers/theme_provider.dart';
+import 'package:portfolio_website/utils/utils.dart';
+import 'package:provider/provider.dart';
 
 class MyInfo extends StatelessWidget {
   const MyInfo({
@@ -8,13 +10,28 @@ class MyInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    debugPrint('Value Change Build');
     return AspectRatio(
       aspectRatio: 1.23,
       child: Container(
-        color: const Color(0xFF242430),
         child: Column(
           children: [
-            const Spacer(flex: 2),
+            const Spacer(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                const Icon(Icons.mode_night_outlined),
+                Consumer<ThemeProvider>(
+                    builder: (context, provider, _) => Switch(
+                        value: provider.currentThemeData == darkTheme,
+                        onChanged: (_) {
+                          provider.toggleTheme();
+                        }))
+              ],
+            ),
+            const Spacer(
+              flex: 2,
+            ),
             const CircleAvatar(
               radius: 50,
               backgroundImage: AssetImage("assets/images/my_dp.jpg"),

@@ -1,7 +1,7 @@
 import 'package:dev_icons/dev_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:portfolio_website/constants.dart';
+import 'package:portfolio_website/utils/constants.dart';
 import 'package:portfolio_website/screens/main/components/area_info_text.dart';
 import 'package:portfolio_website/screens/main/components/my_info.dart';
 import 'package:portfolio_website/screens/main/components/skills.dart';
@@ -19,6 +19,7 @@ class SideDrawer extends StatelessWidget {
           const MyInfo(),
           Expanded(
               child: SingleChildScrollView(
+            controller: ScrollController(),
             padding: const EdgeInsets.all(defaultPadding),
             child: Column(
               children: [
@@ -37,7 +38,7 @@ class SideDrawer extends StatelessWidget {
                 const Skills(),
                 Container(
                   margin: const EdgeInsets.only(top: defaultPadding),
-                  color: const Color(0xFF24242E),
+                  color: Theme.of(context).cardColor,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
