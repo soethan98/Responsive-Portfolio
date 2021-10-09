@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_website/providers/theme_provider.dart';
-import 'package:portfolio_website/utils/utils.dart';
+import 'package:portfolio_website/utils/constants.dart';
+import 'package:portfolio_website/utils/styling.dart' as styling;
 import 'package:provider/provider.dart';
 
 class MyInfo extends StatelessWidget {
@@ -23,7 +24,7 @@ class MyInfo extends StatelessWidget {
                 const Icon(Icons.mode_night_outlined),
                 Consumer<ThemeProvider>(
                     builder: (context, provider, _) => Switch(
-                        value: provider.currentThemeData == darkTheme,
+                        value: provider.currentThemeData == styling.darkTheme,
                         onChanged: (_) {
                           provider.toggleTheme();
                         }))
@@ -34,12 +35,12 @@ class MyInfo extends StatelessWidget {
             ),
             const CircleAvatar(
               radius: 50,
-              backgroundImage: AssetImage("assets/images/my_dp.jpg"),
+              backgroundImage: AssetImage(myProfile),
             ),
             const Spacer(),
             Text(
               "Soe Than",
-              style: Theme.of(context).textTheme.subtitle2,
+              style: Theme.of(context).textTheme.headline6,
             ),
             const Text(
               "Flutter & Android developer",

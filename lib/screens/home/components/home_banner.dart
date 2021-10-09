@@ -1,5 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:portfolio_website/utils/constants.dart';
 import 'package:portfolio_website/utils/responsive.dart';
 import '../../../extensions/extension.dart';
 
@@ -31,19 +32,24 @@ class HomeBanner extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                           ),
                     ),
+                    // const Spacer(),
                     const SizedBox(
                       height: 8,
                     ),
-                    MyBuildAnimatedText(),
+                    const MyBuildAnimatedText(),
+                    // const Spacer(),
                     const SizedBox(
                       height: 8,
                     ),
                     Text(
-                      "Dedicated and performance-driven mobile developer who loves to clean and maintainable code.",
-                      style: Theme.of(context).textTheme.subtitle1?.copyWith(),
-                    ),
+                        "Dedicated and performance-driven mobile developer who loves to clean and maintainable code.",
+                        style: Theme.of(context)
+                            .textTheme
+                            .subtitle2
+                            ?.copyWith(color: Colors.grey[700])),
+                   
                     const SizedBox(
-                      height: 8,
+                      height: 10,
                     ),
                     ElevatedButton(
                         style: Theme.of(context)
@@ -51,22 +57,18 @@ class HomeBanner extends StatelessWidget {
                             .style
                             ?.copyWith(
                                 elevation: MaterialStateProperty.all(12)),
-                        // style: ButtonStyle(
-                        //   elevation: MaterialStateProperty.all(12),
-                        // ),
                         onPressed: () {
                           Uri(
                             scheme: 'mailto',
                             path: 'soethan762@gmail.com',
                           ).toString().launchURL();
 
-                          // launch(emailLaunchUri.toString());
                         },
                         child: const Text('Hire me'))
                   ],
                 ),
               )),
-          Expanded(flex: 1, child: Image.asset('assets/images/programmer.png'))
+          Expanded(flex: 1, child: Image.asset(programmer))
         ],
       ),
     );

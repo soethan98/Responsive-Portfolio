@@ -1,4 +1,3 @@
-import 'package:dev_icons/dev_icons.dart';
 import 'package:flutter/material.dart';
 import '../../../extensions/extension.dart';
 import 'package:flutter_svg/svg.dart';
@@ -24,7 +23,7 @@ class ProjectCard extends StatelessWidget {
             projectEntity.title,
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
-            style: Theme.of(context).textTheme.subtitle2,
+            style: Theme.of(context).textTheme.subtitle1,
           ),
           const Spacer(),
           if (projectEntity.description != null)
@@ -32,7 +31,7 @@ class ProjectCard extends StatelessWidget {
               projectEntity.description!,
               maxLines: Responsive.isMobileLarge(context) ? 3 : 4,
               overflow: TextOverflow.ellipsis,
-              style: const TextStyle(height: 1.5),
+              style: Theme.of(context).textTheme.subtitle2,
             ),
           const Spacer(),
           Chip(label: Text(projectEntity.baseLang)),
@@ -44,13 +43,13 @@ class ProjectCard extends StatelessWidget {
                 TextButton(
                     onPressed: () => projectEntity.playstoreUrl?.launchURL(),
                     child: SvgPicture.asset(
-                      "assets/icons/playstore.svg",
+                      playstore,
                       color: Theme.of(context).colorScheme.secondary,
                     )),
               if (projectEntity.githubUrl != null)
                 TextButton(
                     onPressed: () => projectEntity.githubUrl?.launchURL(),
-                    child: SvgPicture.asset("assets/icons/github.svg",
+                    child: SvgPicture.asset(github,
                         color: Theme.of(context).colorScheme.secondary)),
             ],
           )

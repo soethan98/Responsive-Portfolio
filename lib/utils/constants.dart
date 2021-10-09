@@ -12,8 +12,13 @@ const Color lightPrimary = Color(0xFFf4f4f4);
 const Color darkPrimary = Colors.black;
 
 const Color lightAccent = Colors.blue;
-// const Color darkAccent = Colors.cyanAccent;
 
 const Color lightBG = Colors.white;
 const Color darkBG = Color(0xFF1f1f1f);
 const Color white = Colors.white;
+
+const String myProfile = 'assets/images/my_dp.jpg';
+const String programmer = 'assets/images/programmer.png';
+
+const String playstore = 'assets/icons/playstore.svg';
+const String github = 'assets/icons/github.svg';
