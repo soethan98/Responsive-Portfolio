@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
           create: (_) => ThemeProvider(),
           child: Consumer<ThemeProvider>(builder: (context, themeProvider, _) {
             return MaterialApp(
-              title: 'Material App',
+              title: 'Soe Than',
               debugShowCheckedModeBanner: false,
               theme: themeProvider.currentThemeData,
               home: const HomeScreen(),

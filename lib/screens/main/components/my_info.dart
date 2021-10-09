@@ -11,7 +11,6 @@ class MyInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    debugPrint('Value Change Build');
     return AspectRatio(
       aspectRatio: 1.23,
       child: Container(
