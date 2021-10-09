@@ -19,7 +19,7 @@ class MainScreen extends StatelessWidget {
                       onPressed: () => Scaffold.of(context).openDrawer(),
                       icon: const Icon(Icons.menu))),
             ),
-      drawer: SideDrawer(),
+      drawer:  SideDrawer(),
       body: Center(
         child: Container(
           constraints: const BoxConstraints(maxWidth: maxWidth),
@@ -28,7 +28,7 @@ class MainScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               if (Responsive.isDesktop(context)) ...[
-                Expanded(flex: 2, child: SideDrawer()),
+                 Expanded(flex: 2, child: SideDrawer()),
               ],
               Expanded(
                 flex: 7,

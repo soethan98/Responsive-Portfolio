@@ -16,13 +16,13 @@ class Skills extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: defaultPadding),
           child: Text(
             'Skills',
-            style: Theme.of(context).textTheme.subtitle2,
+            style: Theme.of(context).textTheme.headline6,
           ),
         ),
         Wrap(
           direction: Axis.horizontal,
           spacing: 10,
-          runSpacing: Responsive.isMobile(context) ? 0.0 : 20,
+          runSpacing: Responsive.isMobile(context) ? 10.0 : 20.0,
           children: skills.entries
               .map((e) => SkillChip(
                     label: e.key,

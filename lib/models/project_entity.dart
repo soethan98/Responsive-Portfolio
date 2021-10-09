@@ -19,7 +19,7 @@ List<ProjectEntity> projects = [
       title: "Movie Talkies",
       baseLang: 'Kotlin',
       description:
-          " View ratings,trailers,descriptions, and search about movies.Explore jetpack architecture components,dagger-2, rxjava",
+          "View ratings,trailers,descriptions, and search about movies.Explore jetpack architecture components,dagger-2, rxjava",
       playstoreUrl:
           'https://play.google.com/store/apps/details?id=com.soethan.movietalkies',
       githubUrl: 'https://github.com/soethan98/MovieTalkies'),
@@ -78,7 +78,3 @@ You can add notes easily."""),
   ),
 ];
 
-// Features included -
-// - View exchange rate from Central Bank Of Myanmar.
-// - Calculate rate between Myanmar kyats and other exchange.
-// - Dark Model Supported.

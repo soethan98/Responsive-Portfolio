@@ -1,6 +1,5 @@
 import 'package:dev_icons/dev_icons.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:portfolio_website/utils/constants.dart';
 import 'package:portfolio_website/screens/main/components/area_info_text.dart';
 import 'package:portfolio_website/screens/main/components/my_info.dart';
@@ -13,6 +12,7 @@ class SideDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      elevation: 0,
       child: SafeArea(
           child: Column(
         children: [
@@ -35,7 +35,7 @@ class SideDrawer extends StatelessWidget {
                   title: 'Phone',
                   text: '+959260654955',
                 ),
-                const Skills(),
+                 Skills(),
                 Container(
                   margin: const EdgeInsets.only(top: defaultPadding),
                   color: Theme.of(context).cardColor,

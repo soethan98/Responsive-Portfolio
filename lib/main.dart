@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
       return OrientationBuilder(builder: (context, orientation) {
-        SizeConfig().init(constraints, orientation);
+        SizeConfig().init(constraints, orientation,context);
         return ChangeNotifierProvider<ThemeProvider>(
           create: (_) => ThemeProvider(),
           child: Consumer<ThemeProvider>(builder: (context, themeProvider, _) {

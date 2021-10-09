@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_website/utils/responsive.dart';
 
 class SizeConfig {
   static double _screenWidth = 0.0;
@@ -13,7 +14,8 @@ class SizeConfig {
   static bool isPortrait = true;
   static bool isMobilePortrait = false;
 
-  void init(BoxConstraints constraints, Orientation orientation) {
+  void init(BoxConstraints constraints, Orientation orientation,
+      BuildContext context) {
     if (orientation == Orientation.portrait) {
       print('this is portrait');
 
@@ -24,10 +26,18 @@ class SizeConfig {
         isMobilePortrait = true;
       }
     } else {
-      print('this is landscape');
-
       _screenWidth = constraints.maxHeight;
       _screenHeight = constraints.maxWidth;
+      if (constraints.maxWidth >= 1024) {
+        _screenHeight = constraints.maxHeight;
+        _screenWidth = constraints.maxWidth;
+      } else {
+        _screenWidth = constraints.maxHeight;
+        _screenHeight = constraints.maxWidth;
+      }
+
+    
+
       isPortrait = false;
       isMobilePortrait = false;
     }

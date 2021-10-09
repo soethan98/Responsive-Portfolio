@@ -28,9 +28,7 @@ class HomeBanner extends StatelessWidget {
                   children: [
                     Text(
                       "Hi!👋 \nI'm Soe Than",
-                      style: Theme.of(context).textTheme.headline5?.copyWith(
-                            fontWeight: FontWeight.bold,
-                          ),
+                      style: Theme.of(context).textTheme.headline5,
                     ),
                     // const Spacer(),
                     const SizedBox(
@@ -98,14 +96,15 @@ class AnimatedText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnimatedTextKit(
+       repeatForever: true,
       animatedTexts: [
         TyperAnimatedText(
           'Native Android Apps',
-          speed: Duration(milliseconds: 60),
+          speed: const Duration(milliseconds: 60),
         ),
         TyperAnimatedText(
           'Flutter Apps',
-          speed: Duration(milliseconds: 60),
+          speed: const Duration(milliseconds: 60),
         )
       ],
     );
