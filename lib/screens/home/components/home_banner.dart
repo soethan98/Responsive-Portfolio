@@ -62,7 +62,7 @@ class HomeBanner extends StatelessWidget {
                           ).toString().launchURL();
 
                         },
-                        child: const Text('Hire me'))
+                        child: const Text('Contact'))
                   ],
                 ),
               )),
