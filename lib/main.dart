@@ -9,9 +9,6 @@ class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    // return LayoutBuilder(builder: (context, constraints) {
-    //   return OrientationBuilder(builder: (context, orientation) {
-    // SizeConfig().init(constraints, orientation,context);
     return ChangeNotifierProvider<ThemeProvider>(
       create: (_) => ThemeProvider(),
       child: Consumer<ThemeProvider>(builder: (context, themeProvider, _) {
@@ -25,7 +22,6 @@ class MyApp extends StatelessWidget {
           title: 'Soe Than',
           debugShowCheckedModeBanner: false,
           theme: themeProvider.currentThemeData,
-          // home: const HomeScreen(),
         );
       }),
     );
