@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:portfolio_website/utils/constants.dart';
 import 'package:portfolio_website/models/project_entity.dart';
 import 'package:portfolio_website/screens/home/components/project_card.dart';
-import 'package:portfolio_website/utils/size_config.dart';
 
 class ProjectGridView extends StatelessWidget {
   final int crossAxisCount;
@@ -17,7 +16,7 @@ class ProjectGridView extends StatelessWidget {
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       itemCount: projects.length,
-      padding:  EdgeInsets.only(bottom: 2 * SizeConfig.heightMultiplier),
+      padding: const EdgeInsets.only(bottom: 16),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: crossAxisCount,
           childAspectRatio: chilAspectRatio,
